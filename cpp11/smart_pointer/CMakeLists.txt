@@ -1,6 +1,6 @@
 ﻿# CMakeList.txt: main 项目文件
 
-project ("shared_ptr_test")
+project ("smart_pointer")
 
 # set output oath of library
 # set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib/${CMAKE_BUILD_TYPE})

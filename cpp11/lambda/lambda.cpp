@@ -2,6 +2,14 @@
 #include <functional>
 #include <thread>
 
+// lambda表达式允许捕获一定范围内的变量：
+//    [] 不捕获任何变量
+//    [&] 引用捕获，捕获外部作用域所有变量，在函数体内当作引用使用
+//    [=] 值捕获，捕获外部作用域所有变量，在函数内内有个副本使用
+//    [=, &a] 值捕获外部作用域所有变量，按引用捕获a变量
+//    [a] 只值捕获a变量，不捕获其它变量
+//    [this] 捕获当前类中的this指针
+
 class Base {
 public:
     using on_response = std::function<void(int cashier_id)>;
