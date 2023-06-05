@@ -1,6 +1,6 @@
 ﻿# CMakeList.txt: main 项目文件
 
-project ("thread_pool_test")
+project ("thread_pool")
 
 # set output oath of library
 # set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib/${CMAKE_BUILD_TYPE})

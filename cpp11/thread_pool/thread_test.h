@@ -1,24 +1,22 @@
-#ifndef __THREAD_TEST_H__
-#define __THREAD_TEST_H__
+#pragma once
+
 #include "thread_pool.h"
 #include <iostream>
 
 void task_f(int x);
-
 class Work {
 public:
+    Work() { pool_ = std::make_shared<ThreadPool>(); }
     void submitTask(int x) {
         // std::cout << __func__ << " " << __LINE__ << std::endl;
-        pool_.commit(std::bind(&Work::task, x));
+        pool_->commit(std::bind(&Work::task, x));
     }
     static void task(int x);
 
 private:
-    ThreadZone::ThreadPool pool_;
+    std::shared_ptr<ThreadPool> pool_;
 };
 
 void func_test();
 
 void thread_test();
-
-#endif  // __THREAD_TEST_H__
