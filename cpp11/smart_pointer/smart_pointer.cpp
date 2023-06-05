@@ -93,7 +93,28 @@ void funcF() {
     ptr->Print();
 }
 
+void sharedPtrTest() {
+    auto str_ptr = std::make_shared<std::string>();
+    auto tmp = *str_ptr;
+    auto &t = *str_ptr;
+
+    auto fo = [](std::string &s) {
+        auto t = s;
+        s += "fo ";
+    };
+
+    auto fo1 = [](std::string s) { std::cout << s; };
+
+    fo(tmp);
+    fo(*str_ptr);
+    fo(t);
+
+    fo1(t);
+    fo1(tmp);
+}
+
 int main() {
     sharedPtr();
+    sharedPtrTest();
     return 0;
 }
