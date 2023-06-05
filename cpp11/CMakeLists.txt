@@ -5,13 +5,13 @@ add_subdirectory("smart_pointer")
 
 # add_subdirectory("regex")
 
-# add_subdirectory("map_test")
+add_subdirectory("map_test")
 
 add_subdirectory("function_test")
 
 # add_subdirectory ("design_patterns")
 
-# add_subdirectory ("thread_pool")
+add_subdirectory ("thread_pool")
 
 # add_subdirectory("call_once")
 
