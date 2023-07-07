@@ -21,7 +21,7 @@ add_subdirectory("lambda")
 
 # add_subdirectory("sync_callback")
 
-# add_subdirectory("sizeof")
+add_subdirectory("sizeof")
 
 # add_subdirectory("polymorphism")
 

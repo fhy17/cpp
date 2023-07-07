@@ -50,7 +50,7 @@ void func() {
 
     /*test 7*/
     char str7[6] = "hello";
-    printf("test7 %lu %lu\n\n", sizeof(str7), strlen(str7));  // 5 10
+    printf("test7 %lu %lu\n\n", sizeof(str7), strlen(str7));  // 6 5
 
     /*test 8*/
     char str8[5] = {0};
@@ -64,8 +64,8 @@ int main() {
     std::cout << "sizeof(string): " << sizeof(std::string) << std::endl;  // 40 跟编译器有关
 
     char buf[] = "hello";
-    std::cout << "sizeof(buf): " << sizeof(buf) << std::endl;  // 6 数组的总字节数，包含'\0'
-    std::cout << "strlen(buf): " << strlen(buf) << std::endl;  // 5 数组的总字节数，不包含'\0'
+    std::cout << "sizeof(buf): " << sizeof(buf) << std::endl;          // 6 数组的总字节数，包含'\0'
+    std::cout << "strlen(buf): " << strlen(buf) << std::endl;          // 5 数组的总字节数，不包含'\0'
 
     std::cout << "sizeof(char): " << sizeof(char) << std::endl;        // 1
     std::cout << "sizeof(int): " << sizeof(int) << std::endl;          // 4
@@ -76,7 +76,7 @@ int main() {
     char* pc = "123";
     std::cout << "sizeof(char*): " << sizeof(pc) << std::endl;  // 8 指针
     int* pi;
-    std::cout << "sizeof(int*): " << sizeof(pi) << std::endl;  // 8 指针
+    std::cout << "sizeof(int*): " << sizeof(pi) << std::endl;   // 8 指针
 
     int int_arr[] = {1, 2, 4};
     std::cout << "sizeof(int[]): " << sizeof(int_arr) << std::endl;  // 12 数组的总字节数
@@ -86,10 +86,12 @@ int main() {
         double x;
     } S;
     std::cout << "sizeof(struct S): " << sizeof(S) << std::endl;  // 16 对齐
-
+    struct {
+    } T;
+    std::cout << "sizeof(struct T): " << sizeof(T) << std::endl;  // 1 对齐
     std::cout << "sizeof(Test): " << sizeof(Test) << std::endl;  // 4 结构或者类中的静态成员不对结构或者类的大小产生影响
     Test* ss;
-    std::cout << "sizeof(ss): " << sizeof(ss) << std::endl;  // 8 ss为一个指针
+    std::cout << "sizeof(ss): " << sizeof(ss) << std::endl;        // 8 ss为一个指针
 
     std::cout << "sizeof(Test1): " << sizeof(Test1) << std::endl;  // 没有成员变量的结构或类的大小为1
 
@@ -107,10 +109,10 @@ int main() {
     };
     std::cout << "sizeof(MyStruct1): " << sizeof(MyStruct1) << std::endl;  // 24 1+7+8+4+4
 
-    std::cout << "sizeof(Base1): " << sizeof(Base1) << std::endl;      // 16  4+4+8
-    std::cout << "sizeof(Derive1): " << sizeof(Derive1) << std::endl;  // 16  4+4+8
-    std::cout << "sizeof(Derive2): " << sizeof(Derive2) << std::endl;  // 8  指向虚函数的指针
-    std::cout << "sizeof(Derive3): " << sizeof(Derive3) << std::endl;  // 16  4+4+8
+    std::cout << "sizeof(Base1): " << sizeof(Base1) << std::endl;          // 16  4+4+8
+    std::cout << "sizeof(Derive1): " << sizeof(Derive1) << std::endl;      // 16  4+4+8
+    std::cout << "sizeof(Derive2): " << sizeof(Derive2) << std::endl;      // 8  指向虚函数的指针
+    std::cout << "sizeof(Derive3): " << sizeof(Derive3) << std::endl;      // 16  4+4+8
 
     func();
     return 0;
