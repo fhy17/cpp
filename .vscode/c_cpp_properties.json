@@ -1,12 +1,16 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Win64",
             "includePath": [
-                "${default}"
+                "${default}",
+                "D:\\Windows Kits\\10\\include",
+                "D:\\Apps\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include"
             ],
-            "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "D:\\Apps\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\Hostx64\\x64\\cl.exe",
+            // "windowsSdkVersion": "10.0.17763.0",
+            // "windowsSdkVersion": "14.39.33519",
+            // "compilerPath": "D:\\Apps\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\Hostx64\\x64\\cl.exe",
+            "compilerPath": "D:\\Apps\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\Hostx64\\x64\\cl.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-msvc-x64",
